@@ -1,0 +1,15 @@
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\bin\Debug\net6.0\MapTemplate.exe
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\bin\Debug\net6.0\MapTemplate.deps.json
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\bin\Debug\net6.0\MapTemplate.runtimeconfig.json
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\bin\Debug\net6.0\MapTemplate.dll
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\bin\Debug\net6.0\MapTemplate.pdb
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.csproj.AssemblyReference.cache
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.AssemblyInfoInputs.cache
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.AssemblyInfo.cs
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.csproj.CoreCompileInputs.cache
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.dll
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\refint\MapTemplate.dll
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.pdb
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\MapTemplate.genruntimeconfig.cache
+C:\Users\nikla\source\repos\MapTemplate\MapTemplate\obj\Debug\net6.0\ref\MapTemplate.dll
