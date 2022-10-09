@@ -20,5 +20,7 @@ namespace MapTemplate
             Y = y;
             this.mapMarker = mapMarker;
         }
+
+        public Move()
     }
 }

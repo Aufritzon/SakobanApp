@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nikla\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj": {}
+    "C:\\Users\\wfrit\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nikla\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj": {
+    "C:\\Users\\wfrit\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nikla\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj",
+        "projectUniqueName": "C:\\Users\\wfrit\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj",
         "projectName": "MapTemplate",
-        "projectPath": "C:\\Users\\nikla\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj",
-        "packagesPath": "C:\\Users\\nikla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nikla\\source\\repos\\MapTemplate\\MapTemplate\\obj\\",
+        "projectPath": "C:\\Users\\wfrit\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj",
+        "packagesPath": "C:\\Users\\wfrit\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wfrit\\source\\repos\\MapTemplate\\MapTemplate\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\nikla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wfrit\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,8 +25,7 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
         },
         "frameworks": {
           "net6.0": {

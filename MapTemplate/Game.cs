@@ -14,31 +14,84 @@ namespace MapTemplate
         {
             map = new Map();
             objects.Add(new GameObject(5, 5, "P"));
-
             map.PrintMap(objects);
         }
 
+
+
+
         // Move the given object one step left.
-        public bool MoveLeft(GameObject gameObject)
+        public bool TryMove(Direction dir, GameObject gameObject)
         {
+            string tile;
+
             // Get what kind of tile we're stepping on.
-            string tile = map.ReturnTile(gameObject.X - 1, gameObject.Y);
+            switch (dir)
+            {
+                case Direction.Left:
+                {
+                    tile = map.ReturnTile(gameObject.X - 1, gameObject.Y);
+                    break;
+                }
+                case Direction.Right:
+                {
+                    tile = map.ReturnTile(gameObject.X + 1, gameObject.Y);
+                    break;
+                }
+                case Direction.Down:
+                {
+                    tile = map.ReturnTile(gameObject.X, gameObject.Y + 1);
+                    break;
+                }
+                default:
+                {
+                    tile = map.ReturnTile(gameObject.X, gameObject.Y - 1);
+                    break;
+                }
+            }
 
             if (tile.Equals(""))
             {
                 Console.WriteLine("That's out of bounds!");
                 return false;
             }
-            else if (tile.Equals("w"))
+
+            if (tile.Equals("w"))
             {
                 Console.WriteLine("That's a wall!");
                 return false;
             }
 
-            // Perhaps add code to see if we're walking into another object, too.
-
-            gameObject.X--; // Move the object's x one step left.
+            Move(dir, gameObject);
             return true;
         }
+
+        private void Move(Direction dir, GameObject gameObject)
+        {
+            switch (dir)
+            {
+                case Direction.Left:
+                {
+                    gameObject.X--; // Move the object's x one step left.
+                    break;
+                }
+                case Direction.Right:
+                {
+                    gameObject.X++; // Move the object's x one step right.
+                    break;
+                }
+                case Direction.Down:
+                {
+                    gameObject.Y++; // Move the object's y one step down.
+                    break;
+                }
+                case Direction.Up:
+                {
+                    gameObject.Y--; // Move the object's y one step up.
+                    break;
+                }
+            }
+        }
+
     }
 }

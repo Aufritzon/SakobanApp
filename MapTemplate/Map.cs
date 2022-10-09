@@ -65,5 +65,6 @@ namespace MapTemplate
             }
             return map[y][x];
         }
+
     }
 }
