@@ -20,7 +20,7 @@ namespace MapTemplate
 
 
 
-        // Move the given object one step left.
+        // Try to move the given object one step in the chosen direction (dir)
         public bool TryMove(Direction dir, GameObject gameObject)
         {
             string tile;
@@ -64,6 +64,7 @@ namespace MapTemplate
             }
         }
 
+        // MOve the given object one step in the chosen direction (dir)
         private void Move(Direction dir, GameObject gameObject)
         {
             switch (dir)
