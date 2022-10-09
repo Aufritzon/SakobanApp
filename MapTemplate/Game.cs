@@ -50,20 +50,18 @@ namespace MapTemplate
                 }
             }
 
-            if (tile.Equals(""))
+            switch (tile)
             {
-                Console.WriteLine("That's out of bounds!");
-                return false;
+                case "":
+                    Console.WriteLine("That's out of bounds!");
+                    return false;
+                case "w":
+                    Console.WriteLine("That's a wall!");
+                    return false;
+                default:
+                    Move(dir, gameObject);
+                    return true;
             }
-
-            if (tile.Equals("w"))
-            {
-                Console.WriteLine("That's a wall!");
-                return false;
-            }
-
-            Move(dir, gameObject);
-            return true;
         }
 
         private void Move(Direction dir, GameObject gameObject)
@@ -85,7 +83,7 @@ namespace MapTemplate
                     gameObject.Y++; // Move the object's y one step down.
                     break;
                 }
-                case Direction.Up:
+                default:
                 {
                     gameObject.Y--; // Move the object's y one step up.
                     break;
