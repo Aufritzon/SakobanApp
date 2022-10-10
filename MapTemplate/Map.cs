@@ -37,7 +37,7 @@ namespace MapTemplate
             tempMap = (string[][])map.Clone();
             foreach(GameObject obj in objects)
             {
-                tempMap[obj.X][obj.Y] = obj.mapMarker;
+                tempMap[obj.Y][obj.X] = obj.mapMarker;
             }
 
             PrintMap(tempMap);

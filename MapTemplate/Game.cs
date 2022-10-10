@@ -15,6 +15,11 @@ namespace MapTemplate
             map = new Map();
             objects.Add(new GameObject(5, 5, "P"));
             map.PrintMap(objects);
+
+            Thread.Sleep(2000);
+            objects.ForEach(x => TryMove(Direction.Left,x));
+            Console.Clear();
+            map.PrintMap(objects);
         }
 
 
@@ -40,13 +45,17 @@ namespace MapTemplate
                 }
                 case Direction.Down:
                 {
-                    tile = map.ReturnTile(gameObject.X, gameObject.Y + 1);
+                    tile = map.ReturnTile(gameObject.X,gameObject.Y + 1);
+                    break;
+                }
+                case Direction.Up:
+                {
+                    tile = map.ReturnTile(gameObject.X, gameObject.Y - 1);
                     break;
                 }
                 default:
                 {
-                    tile = map.ReturnTile(gameObject.X, gameObject.Y - 1);
-                    break;
+                    throw new NotImplementedException();
                 }
             }
 
@@ -64,7 +73,7 @@ namespace MapTemplate
             }
         }
 
-        // MOve the given object one step in the chosen direction (dir)
+        // Move the given object one step in the chosen direction (dir)
         private void Move(Direction dir, GameObject gameObject)
         {
             switch (dir)
@@ -72,22 +81,26 @@ namespace MapTemplate
                 case Direction.Left:
                 {
                     gameObject.X--; // Move the object's x one step left.
-                    break;
+                    return;
                 }
                 case Direction.Right:
                 {
                     gameObject.X++; // Move the object's x one step right.
-                    break;
+                    return;
                 }
                 case Direction.Down:
                 {
                     gameObject.Y++; // Move the object's y one step down.
-                    break;
+                    return;
+                }
+                case Direction.Up:
+                {
+                    gameObject.Y--; // Move the object's y one step up.
+                    return;
                 }
                 default:
                 {
-                    gameObject.Y--; // Move the object's y one step up.
-                    break;
+                    throw new NotImplementedException();
                 }
             }
         }
