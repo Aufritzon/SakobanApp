@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BcVo0PU78fzgXrDt+isW3w60HwpRFnVIqu6xS+lxBx/OSqaZs7pybU5PFk83RaRVhBwwBnqk1x+9kRz68UA89g==",
+  "dgSpecHash": "lakQprIUGHv3/T1C0BWV10YQJqhIQm9VrTTpySELAkH54hHQ810QryyKix3A3KmvH72CIsOsfTAKxFb7/xywww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wfrit\\source\\repos\\MapTemplate\\MapTemplate\\MapTemplate.csproj",
+  "projectFilePath": "C:\\Users\\jonat\\Documents\\Sakoban\\SakobanApp\\MapTemplate\\MapTemplate.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

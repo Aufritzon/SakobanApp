@@ -10,21 +10,23 @@ namespace MapTemplate
 {
     class Map
     {
-        private static string[][] map2 =
+        private string[][] map;
+
+        private string[][] map2 =
         {
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." },
-            new string[] { ".", ".", ".", ".", ".", ".", ".", ".", ".", "." }
+            new string[] { "w", "w", "w", "w", "w", "w", "w", "w", "w", "w" },
+            new string[] { "w", ".", ".", ".", ".", ".", ".", ".", ".", "w" },
+            new string[] { "w", ".", ".", ".", "t", ".", ".", ".", ".", "w" },
+            new string[] { "w", ".", ".", ".", ".", ".", ".", ".", ".", "w" },
+            new string[] { "w", ".", ".", ".", ".", ".", ".", ".", ".", "w" },
+            new string[] { "w", ".", ".", ".", ".", ".", ".", ".", ".", "w" },
+            new string[] { "w", ".", "t", "w", ".", ".", ".", ".", ".", "w" },
+            new string[] { "w", ".", ".", "w", ".", ".", ".", ".", ".", "w" },
+            new string[] { "w", ".", ".", "w", ".", ".", ".", ".", ".", "w" },
+            new string[] { "w", "w", "w", "w", "w", "w", "w", "w", "w", "w" }
         };
 
-        private static string[][] map =
+        private string[][] map1 =
         {
             new string[] { "w", "w", "w", "w", "w", "w", "w", "w", "w", "w" },
             new string[] { "w", ".", ".", ".", ".", ".", ".", ".", ".", "w" },
@@ -39,10 +41,22 @@ namespace MapTemplate
         };
 
 
-        public Map()
-        {
 
+        public Map(int mapOpt)
+        {
+            ChooseMap(mapOpt);
         }
+
+        private void ChooseMap(int mapOption)
+        {
+            if(mapOption == 1)
+            {
+                map = map1;
+            } else if(mapOption == 2)
+            {
+                map = map2;
+            } 
+        } 
 
         // This function places all my moveable objects on my static map,
         // then prints it.

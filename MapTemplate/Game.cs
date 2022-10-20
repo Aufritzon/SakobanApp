@@ -14,32 +14,52 @@ namespace MapTemplate
 
     class Game
     {
-        private Map map = new();
+        private bool gameWon = false;
+        private Map map;
         private List<GameObject> objects = new List<GameObject>();
         private List<GameObject> targets;
 
         public Game()
         {
+            while (true)
+            {
+                gameWon = false;
+                Console.Clear();
+                Console.WriteLine("----------------------------------");
+                Console.WriteLine("CClick ENTER to start the game");
+                Console.WriteLine("Click ESC to quit");
+                ConsoleKey key;
+                while (true)
+                {
+                    key = Console.ReadKey().Key;
+                    if (key == ConsoleKey.Enter)
+                    {
+                        break;
 
+                    }
+                    if (key == ConsoleKey.Escape)
+                    {
+                        return;
+                    }
 
-            initGame();
+                }
 
-            targets = map.GetMapTargets();
-            targets.ForEach(x => Console.WriteLine(x.mapMarker));
+                Console.Clear();
+                Console.WriteLine("Click 1 to choose map1");
+                Console.WriteLine("Click 2 to choose map2");
+                key = Console.ReadKey().Key;
+                if (key == ConsoleKey.D1)
+                {
+                    map = new Map(1);
 
-            (int x1, int y1) = (targets[0].X, targets[0].Y);
-            (int x2, int y2) = (targets[1].X, targets[1].Y);
+                }
+                if (key == ConsoleKey.D2)
+                {
+                    map = new Map(2);
+                } 
 
-            objects.Add(new GameObject(x1, y1, "b"));
-            objects.Add(new GameObject(x2, y2, "b"));
-
-
-            map.PrintMap(objects);
-
-
-            Console.WriteLine(OnTarget(objects[1]));
-
-            Console.WriteLine(AllBoxesOnTarget());
+                initGame();
+            }
 
         }
 
@@ -49,20 +69,21 @@ namespace MapTemplate
 
             while (true)
             {
-
+                gameWon = false;
                 Console.Clear();
                 objects.Clear();
                 objects.Add(new GameObject(3, 3, "b"));
-                objects.Add(new GameObject(3, 4, "b"));
+                objects.Add(new GameObject(3, 5, "b"));
                 objects.Add(new GameObject(5, 5, "P"));
 
 
 
-                while (true)
+                while (!gameWon)
                 {
-
+                    Console.Clear();
                     map.PrintMap(objects);
                     Console.WriteLine("Press SPACE to restart");
+                    Console.WriteLine("Press ESC to go to start menu");
                     ConsoleKey key = Console.ReadKey().Key;
 
                     if (key == ConsoleKey.Spacebar)
@@ -70,13 +91,29 @@ namespace MapTemplate
                         break;
 
                     }
+                    if (key == ConsoleKey.Escape)
+                    {
+                        Console.Clear();
+                        return;
+                    }
 
                     Direction dir = KeyToDir(key);
 
                     TryMove(dir, objects.Find(x => x.mapMarker == "P") ?? throw new InvalidOperationException());
 
-                    Console.Clear();
+
+                    if (gameWon){
+                        Console.Clear();
+                        map.PrintMap(objects);
+                        Console.WriteLine("You Win");
+                        Thread.Sleep(2000);
+                        Console.Clear();
+
+                    }
+
+                    
                 }
+
 
             }
         }
@@ -104,14 +141,6 @@ namespace MapTemplate
             }
 
         }
-
-        public void UpdateView()
-        {
-
-        }
-
-
-
 
         // Try to move the given object one step in the chosen direction (dir)
         public bool TryMove(Direction dir, GameObject gameObject)
@@ -187,8 +216,8 @@ namespace MapTemplate
                         map.PrintMap(objects);
                         if (AllBoxesOnTarget())
                         {
-                            Console.WriteLine("You Win");
-                            Thread.Sleep(2000);
+                            gameWon = true;
+
                         }
 
                         return true;
